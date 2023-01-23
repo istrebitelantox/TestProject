@@ -33,6 +33,5 @@ public class Input extends BaseElement {
 
     public void sendKeyEnt() {
         container.sendKeys(Keys.ENTER);
-
     }
 }
