@@ -1,19 +1,14 @@
 package Tests.Payments;
 
 import Tests.BaseTest;
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
+import Interfaces.IOtherPage;
 @Feature("Payments")
-public class TransfersTest extends BaseTest {
-    @DisplayName("Тестирование \"Card To Card\" transfer")
+public class TransfersTest extends BaseTest implements IOtherPage {
+    @DisplayName("Тестирование \"Card To Card\" переводов")
     @Test
     public void cardToCardTest(){
         step_1();
@@ -56,8 +51,9 @@ public class TransfersTest extends BaseTest {
     }
     @Step("Подтверждаем трансфер")
     public void step_8(){
-        WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='confirmation-frame']")));
+        openOtherPageInPage("confirmation-frame");
+/*        WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='confirmation-frame']")));*/
         transfers.confirmButton.setBtnClick();
     }
 }

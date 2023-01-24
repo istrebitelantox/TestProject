@@ -5,4 +5,5 @@ import utills.A;
 public class HomePage {
     public final A deposits =new A("@id='deposits-index'");
     public final A payments =new A("@id='payments-form'");
+    public final A message=new A("@id='messages-button'");
 }

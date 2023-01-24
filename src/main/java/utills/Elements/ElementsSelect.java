@@ -1,4 +1,4 @@
-package utills;
+package utills.Elements;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
@@ -7,10 +7,10 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$$;
 
-public class ElementsHelper {
-    private final ElementsCollection first=$$(By.cssSelector("ul#dashboard-payment-type-menu a"));
+public class ElementsSelect {
+    private final ElementsCollection first=$$(By.cssSelector("select[name='message.topicName'] option"));
     private final SelenideElement element;
-    public ElementsHelper(String text){
+    public ElementsSelect(String text){
         element=first.find(Condition.exactText(text));
     }
     public void elementClk(){

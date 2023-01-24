@@ -9,4 +9,6 @@ public interface AllPageInfo {
     Payments payments =new Payments();
     TransfersPage transfers=new TransfersPage();
     SubscriptionsPage subscriptionsPage=new SubscriptionsPage();
+    MessagePage messagePage=new MessagePage();
+    NewMessagePage newMessagePage=new NewMessagePage();
 }

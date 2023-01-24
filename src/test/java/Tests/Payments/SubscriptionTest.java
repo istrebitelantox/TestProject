@@ -1,19 +1,13 @@
 package Tests.Payments;
 
 import Tests.BaseTest;
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utills.BaseElement;
-
-import java.time.Duration;
+import Interfaces.IOtherPage;
 @Feature("Payments")
-public class SubscriptionTest extends BaseTest {
+public class SubscriptionTest extends BaseTest implements IOtherPage {
     @Test
     @DisplayName("Тест оплаты подписки Билайн")
     public void subTest(){
@@ -46,8 +40,9 @@ public class SubscriptionTest extends BaseTest {
     }
     @Step("Подтверждаем оплату подписки")
     public void step_6(){
-        WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='confirmation-frame']")));
+        openOtherPageInPage("confirmation-frame");
+/*        WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='confirmation-frame']")));*/
         subscriptionsPage.confirmBtn.setBtnClick();
     }
 }
