@@ -1,13 +1,11 @@
 package PageSteps;
 
-import com.codeborne.selenide.SelenideElement;
 import utills.A;
-import utills.Button;
-import utills.Input;
-
-import static com.codeborne.selenide.Selenide.$x;
+import utills.ElementsHelper;
 
 public class Payments {
-    public A transfers=new A("@title='Transfers'");
+    /*public A transfers=new A("@title='Transfers'");*/
+    public ElementsHelper transfers=new ElementsHelper("Transfers");
+    public ElementsHelper subscriptions=new ElementsHelper("Subscriptions");
 
 }

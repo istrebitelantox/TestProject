@@ -8,4 +8,5 @@ public interface AllPageInfo {
     LoginPage loginPage=new LoginPage();
     Payments payments =new Payments();
     TransfersPage transfers=new TransfersPage();
+    SubscriptionsPage subscriptionsPage=new SubscriptionsPage();
 }

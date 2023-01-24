@@ -1,7 +1,5 @@
 package PageSteps;
 
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideDriver;
 import com.codeborne.selenide.SelenideElement;
 import utills.A;
 import utills.Button;

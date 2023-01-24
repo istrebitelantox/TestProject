@@ -9,55 +9,45 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utills.BaseElement;
 
 import java.time.Duration;
 @Feature("Payments")
-public class TransfersTest extends BaseTest {
-    @DisplayName("Тестирование \"Card To Card\" transfer")
+public class SubscriptionTest extends BaseTest {
     @Test
-    public void cardToCardTest(){
+    @DisplayName("Тест оплаты подписки Билайн")
+    public void subTest(){
         step_1();
         step_2();
         step_3();
         step_4();
         step_5();
         step_6();
-        step_7();
-        step_8();
     }
     @Step("Переход к \"Payments\"")
     public void step_1(){
         homePage.payments.clickA();
     }
-    @Step("Переход к \"Transfers\"")
+    @Step("Переход к \"Subscriptions\"")
     public void step_2(){
-        payments.transfers.elementClk();
+        payments.subscriptions.elementClk();
     }
-    @Step("Переход к \"Card to Card\"")
+    @Step("Скролим к \"Билайн: Оплата телефона\"")
     public void step_3(){
-        transfers.cardToCard.clickA();
+        subscriptionsPage.scroll.scrollTo();
     }
-    @Step("Выбор карты, на которую будет совершён трансфер")
+    @Step("Переход к \"Prepay subscription\n\"")
     public void step_4(){
-        transfers.destinationButton.click();
-        transfers.destinationOption.click();
+        subscriptionsPage.bil.click();
     }
-    @Step("Ввод ссумы трансфера")
+    @Step("Сохраняем данные")
     public void step_5(){
-        transfers.amount.setInputValue("20000");
+        subscriptionsPage.saveBtn.setBtnClick();
     }
-    @Step("Переход к \"Payment\"")
+    @Step("Подтверждаем оплату подписки")
     public void step_6(){
-        transfers.forwardButton.setBtnClick();
-    }
-    @Step("Принимаем условия")
-    public void step_7(){
-        transfers.condition.setInputClick();
-    }
-    @Step("Подтверждаем трансфер")
-    public void step_8(){
         WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='confirmation-frame']")));
-        transfers.confirmButton.setBtnClick();
+        subscriptionsPage.confirmBtn.setBtnClick();
     }
 }
