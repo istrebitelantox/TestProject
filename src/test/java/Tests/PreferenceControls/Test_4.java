@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 @Feature("PreferenceControls")
-public class MessageTest extends BaseTest {
+public class Test_4 extends BaseTest {
     @Test
     @DisplayName("Тестирование отправки нового сообщения")
     public void newMassageTest(){
@@ -25,7 +25,7 @@ public class MessageTest extends BaseTest {
     }
     @Step("Переход к \"New Message\"")
     public void step_2(){
-        messagePage.newMessage.clickA();
+        messagePage.newMessageBtn.clickA();
     }
     @Step("Выбор темы сообщения")
     public void step_3(){

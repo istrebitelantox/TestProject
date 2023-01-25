@@ -8,10 +8,11 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ElementsSelect {
-    private final ElementsCollection first=$$(By.cssSelector("select[name='message.topicName'] option"));
+    private final ElementsCollection first;
     private final SelenideElement element;
-    public ElementsSelect(String text){
-        element=first.find(Condition.exactText(text));
+    public ElementsSelect(String selectText,String elementText){
+        first=$$(By.cssSelector("select["+selectText+"] option"));
+        element=first.find(Condition.exactText(elementText));
     }
     public void elementClk(){
         element.click();

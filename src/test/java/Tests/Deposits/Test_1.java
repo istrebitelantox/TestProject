@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 @Feature("Deposits")
-public class CreateNewDepositTest extends BaseTest {
+public class Test_1 extends BaseTest {
     @DisplayName("Тестирование создания нового депозита")
     @Test
     public void createNewDepositTest(){
@@ -24,7 +24,7 @@ public class CreateNewDepositTest extends BaseTest {
     }
     @Step("Открываем \"New Deposit\"")
     public void step_2() {
-        deposit.btnShowRates.clickA();
+        deposit.showRatesBtn.clickA();
     }
     @Step("Открываем форму \"Deposits\"")
     public void step_3() {
@@ -41,10 +41,10 @@ public class CreateNewDepositTest extends BaseTest {
         deposit.newDeposCondCeckBtn.setInputClick();
         deposit.instantDeposCondCheckBtn.setInputClick();
         deposit.body.scrollIntoView(true);
-        deposit.acceptInstantDepositAgreementButton.clickA();
+        deposit.acceptInstantDepositAgreementBtn.clickA();
     }
     @Step("Создаём новый депозит")
     public void step_6() {
-        deposit.confirm.setBtnClick();
+        deposit.confirmBtn.setBtnClick();
     }
 }

@@ -1,13 +1,13 @@
 package Tests.Payments;
 
+import Interfaces.IOtherPage;
 import Tests.BaseTest;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import Interfaces.IOtherPage;
 @Feature("Payments")
-public class SubscriptionTest extends BaseTest implements IOtherPage {
+public class Test_3 extends BaseTest implements IOtherPage {
     @Test
     @DisplayName("Тест оплаты подписки Билайн")
     public void subTest(){

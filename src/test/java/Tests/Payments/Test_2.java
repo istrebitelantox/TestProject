@@ -1,13 +1,13 @@
 package Tests.Payments;
 
+import Interfaces.IOtherPage;
 import Tests.BaseTest;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import Interfaces.IOtherPage;
 @Feature("Payments")
-public class TransfersTest extends BaseTest implements IOtherPage {
+public class Test_2 extends BaseTest implements IOtherPage {
     @DisplayName("Тестирование \"Card To Card\" переводов")
     @Test
     public void cardToCardTest(){
@@ -34,8 +34,8 @@ public class TransfersTest extends BaseTest implements IOtherPage {
     }
     @Step("Выбор карты, на которую будет совершён трансфер")
     public void step_4(){
-        transfers.destinationButton.click();
-        transfers.destinationOption.click();
+        transfers.destinationButton.selectClick();
+        transfers.destinationOption.elementClk();
     }
     @Step("Ввод ссумы трансфера")
     public void step_5(){
